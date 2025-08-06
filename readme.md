@@ -1,59 +1,88 @@
-# 📰 TF-IDF News Classifier
+📰 TF-IDF News Classifier
+A lightweight and interpretable news article classifier that categorizes articles using TF-IDF and Cosine Similarity. This project offers a simple, no-training-needed alternative to complex machine learning models, built from scratch with Python and scikit-learn.
 
-A simple Python project that classifies news articles into predefined categories (e.g., **Politics**, **Technology**, **Sports**, **Entertainment**) using **TF-IDF** and **cosine similarity**.
+✨ Features
+Keyword-Based Classification: Categorizes articles based on representative keywords you define.
 
-This is a lightweight and interpretable alternative to heavy machine learning models — built entirely from scratch using `scikit-learn`.
+Lightweight & Interpretable: No heavy models or complex training pipelines. The logic is straightforward and easy to understand.
 
----
+Zero Training: Classifies articles on-the-fly without any pre-training phase.
 
-## 📂 Project Structure
+Easily Configurable: Add, remove, or modify categories and their keywords by editing a simple JSON file.
 
-tfidf-news-classifier/
-├── classifier/ # Core classification logic
-│ ├── init.py
-│ └── tfidf_classifier.py
-├── data/ # Input data
-│ ├── articles.txt # Articles to classify
-│ └── categories.json # Category definitions
-├── main.py # Entry point
-├── requirements.txt # Dependencies
-├── .gitignore
-└── README.md
+Standard Tooling: Built with Python and the popular scikit-learn library.
 
-## ⚙️ How It Works
+⚙️ How It Works
+The classification process is elegant in its simplicity:
 
-1. Predefined categories (like *Politics*, *Sports*) are stored with representative keywords.
-2. Articles are vectorized using **TF-IDF**.
-3. Similarity between each article and each category is calculated using **cosine similarity**.
-4. Top categories are returned as the classification output.
+✍️ Define Categories: You define your categories (e.g., Politics, Technology, Sports) and a list of representative keywords for each in the data/categories.json file.
 
-## 🚀 Quick Start
+🔢 Vectorize Content: Both the input articles and the category keywords are transformed into numerical vectors using the Term Frequency-Inverse Document Frequency (TF-IDF) algorithm. This process highlights words that are most significant to a document.
 
-### 1. Clone the repo & navigate
+📐 Calculate Similarity: The Cosine Similarity metric is used to measure the angle between each article's vector and each category's vector. A smaller angle implies a higher similarity in content.
 
-```bash
+🏆 Classify: The article is assigned to the category with the highest similarity score.
+
+🚀 Getting Started
+Follow these steps to get the project up and running on your local machine.
+
+1. Prerequisites
+Python 3.7+
+
+Git
+
+2. Installation
+Bash
+
+# 1. Clone the repository
 git clone https://github.com/meanderinghuman/tfidf-news-classifier.git
 cd tfidf-news-classifier
 
-2. Setup virtual environment
-
+# 2. Create and activate a virtual environment (recommended)
 python3 -m venv venv
 source venv/bin/activate
+# On Windows, use: venv\Scripts\activate
 
-3. Install dependencies
-
+# 3. Install the required dependencies
 pip install -r requirements.txt
+🕹️ Usage
+To classify the articles defined in data/articles.txt, simply run the main script:
 
-4. Run the classifier
+Bash
 
 python main.py
+Example Output
+You'll see output similar to the following, showing each article's title and its assigned category:
 
-Requirements
+============================================================
+Article: Apple Unveils New M4 Chip with Advanced AI Capabilities
+Category: Technology
+------------------------------------------------------------
+Article: Global Leaders Meet to Discuss Climate Change Accord
+Category: Politics
+------------------------------------------------------------
+Article: Lakers Secure Playoff Spot with Last-Minute Victory
+Category: Sports
+============================================================
+Customizing the Classifier
+To change categories: Edit data/categories.json. Add or remove category objects, or modify the keywords for any existing category.
 
-    Python 3.7+
+To classify different articles: Replace the content of data/articles.txt with your own articles, one article per line.
 
-    scikit-learn
+📂 Project Structure
+tfidf-news-classifier/
+├── classifier/              # Core classification logic
+│   ├── __init__.py
+│   └── tfidf_classifier.py
+├── data/                    # Input data
+│   ├── articles.txt         # Articles to classify (one per line)
+│   └── categories.json      # Category definitions with keywords
+├── main.py                  # Entry point to run the classifier
+├── requirements.txt         # Project dependencies
+├── .gitignore
+└── README.md
+🤝 Contributing
+Contributions are welcome! If you have suggestions for improvements or want to add new features, feel free to create an issue or submit a pull request.
 
-Install via:
-
-pip install -r requirements.txt
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
