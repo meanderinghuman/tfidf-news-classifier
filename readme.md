@@ -4,8 +4,7 @@ A lightweight and interpretable news article classifier that categorizes article
 
 ![GitHub language count](https://img.shields.io/github/languages/count/meanderinghuman/tfidf-news-classifier?style=for-the-badge)
 ![GitHub top language](https://img.shields.io/github/languages/top/meanderinghuman/tfidf-news-classifier?style=for-the-badge)
-![GitHub license](https://img.shields.io/github/license/meanderinghuman/tfidf-news-classifier?style=for-the-badge)
-
+![GitHub license](https://img.shields.io/github/license/meanderinghuman/tfidf-news-classifier?style=for-the-badge&cache_bust=1)
 ---
 
 ## ✨ Features
